@@ -1,14 +1,14 @@
-// Global scope
+// Global scope variables
 const burgers = ["Hamburger", "Cheeseburger"];
 let featuredDrink = "Strawberry Milkshake";
 
-// Function to add a burger
+// Function to add burgers
 function addBurger() {
-  const newBurger = "Flatburger"; // function-scoped
+  const newBurger = "Flatburger"; // function-scoped variable
   burgers.push(newBurger);
 
   if (true) {
-    const anotherNewBurger = "Maple Bacon Burger"; // block-scoped
+    const anotherNewBurger = "Maple Bacon Burger"; // block-scoped variable
     burgers.push(anotherNewBurger);
   }
 }
@@ -18,6 +18,6 @@ function changeFeaturedDrink() {
   featuredDrink = "The JavaShake";
 }
 
-// Call functions to show they work
+// Call functions so changes happen
 addBurger();
 changeFeaturedDrink();
