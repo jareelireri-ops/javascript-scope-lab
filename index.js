@@ -1,23 +1,23 @@
-// Global scope variable
-let burgers = ["Hamburger", "Cheeseburger"];
+// Global scope
+const burgers = ["Hamburger", "Cheeseburger"];
+let featuredDrink = "Strawberry Milkshake";
 
-// Global scope string
-let drink = "Milkshake";
-
-// Function-scoped variable
-function featuredDrink() {
-  let featured = "Vanilla Milkshake";
-  return featured;
-}
-
-// Block-scoped variable
+// Function to add a burger
 function addBurger() {
+  const newBurger = "Flatburger"; // function-scoped
+  burgers.push(newBurger);
+
   if (true) {
-    let newBurger = "Bacon Burger";
-    burgers.push(newBurger);
+    const anotherNewBurger = "Maple Bacon Burger"; // block-scoped
+    burgers.push(anotherNewBurger);
   }
 }
 
-// Call the function so the block-scoped variable runs
+// Function to change the featured drink
+function changeFeaturedDrink() {
+  featuredDrink = "The JavaShake";
+}
+
+// Call functions to show they work
 addBurger();
-console.log(burgers); // Output: ["Hamburger", "Cheeseburger", "Bacon Burger"]
+changeFeaturedDrink();
